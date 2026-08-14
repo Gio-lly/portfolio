@@ -53,7 +53,8 @@ const projects = [
         " in the assignment. The original analog model is converted into its WDF equivalent using"+
         "a fully explicit computational approach, deliberately excluding iterative solution methods. The performance of the implemented WDF model is then evaluated by comparing"+
         "its output to the reference signal obtained from a Simscape simulation, considering both"+
-        "time-domain and frequency-domain analyses."
+        "time-domain and frequency-domain analyses."+
+        "The project was developed as part of the 'Sound Analysis, Synthesis and Processing' course at Politecnico di Milano."
     },
     {
         id: "Cathartic",
@@ -63,6 +64,7 @@ const projects = [
         hue: 180,
         image: "images/Cathartic.png",
         report: "report/Cathartic.pdf",
+        tech: ["Python", "HuggingFace goEmotions model","Processing","MagentaRT"],
         github: "https://github.com/Gio-lly/Cathartic---CPAC-Final-Project",
         description: "Cathartic is an interactive audiovisual installation exploring how artificial intelligence can "+
         "support a personal and non-judgmental moment of emotional reflection. "+
@@ -80,7 +82,8 @@ const projects = [
         "The detected emotions influence a real-time generative music model by controlling a "+
         "combination of weighted textual and audio prompts. At the same time, they define the "+
         "general colour palette and visual character of a responsive particle system inspired by "+
-        "Chladni resonance patterns."
+        "Chladni resonance patterns."+
+        "The project was developed as part of the 'Creative Programming and Computing' course at Politecnico di Milano."
     },
     {
         id: "Banjo Modelling",
@@ -89,11 +92,13 @@ const projects = [
         year: "2026",
         hue: 100,
         image: "images/banjo.png",
+        tech: ["COMSOL Multiphysics","MATLAB","Python"],
         report: "report/Banjo_Modeling_Serra_Impembo_Mattina.pdf",
         description: "The project is a musical-acoustics modeling study whose goal is to characterize the vibro-acoustic behavior of a banjo-like instrument and, ultimately, to synthesize its sound. The instrument is idealized as three coupled elements — a circular aluminum soundboard (a thin, clamped plate), an iron string stretched over it, and a resonating soundbox — and the work traces the full chain from the physical/mechanical characterization of these parts to the audio signal that the assembled instrument would radiate when the string is plucked. In short, it aims to show how the modal and resonant properties of the body shape the timbre of a struck string.\n\n" +
             "The study combines analytical modeling with finite-element simulation. On the analytical side, it characterizes the plate by computing the propagation speeds of quasi-longitudinal and longitudinal waves, the frequency-dependent (dispersive) speed of bending waves, and the modal frequencies of its first six bending modes. These analytical results are then cross-checked against a COMSOL eigenfrequency study, which returns both the frequencies and the mode shapes; a further COMSOL simulation applies a string-like point force to the plate to extract the driving-point mobility (admittance) Yc at the excitation point.\n\n" +
             "The second half of the project introduces the string and the coupling between string and soundboard. The string is tuned so that its fundamental coincides with the plate's first mode, which fixes the required tension, and the frequencies of the coupled string–soundboard system are then computed while accounting for the plate's modal damping through assigned merit (quality) factors Q. The soundboard admittance is modeled as a sum of modal contributions, and the calculation is repeated for two different sets of Q values (a more damped case Yl and a more resonant case Yh) to compare how damping affects the response. The plate is then mounted on a soundbox, whose Helmholtz resonance is computed and added to the admittances (yielding Yl′ and Yh′), so that the air cavity's contribution is included.\n\n" +
-            "Finally, the project uses these admittances as filters: the vibrational signal of a string plucked at one-fifth of its length is passed through Yl′, Yh′, and Yc, with a prescribed decay time of 1.3 s, to synthesize the radiated sound. The deliverables are a concise report describing the procedure, the COMSOL model, and the sound-synthesis code together with the resulting audio."
+            "Finally, the project uses these admittances as filters: the vibrational signal of a string plucked at one-fifth of its length is passed through Yl′, Yh′, and Yc, with a prescribed decay time of 1.3 s, to synthesize the radiated sound. The deliverables are a concise report describing the procedure, the COMSOL model, and the sound-synthesis code together with the resulting audio."+
+            "The project was developed as part of the 'Musical Acoustics' course at Politecnico di Milano."
     },
     {
         id: "HRTF Simulation and Study",
@@ -103,8 +108,13 @@ const projects = [
         hue: 280,
         image: "images/hrtf.png",
         report: "report/HRTF_report.pdf",
+        tech: ["BEM simulation with Mesh2HRTF","Python","Blender","MATLAB"],
         github: "https://github.com/Gio-lly/A-Comparative-Study-of-HRTF-Measurements-and-Simulations-Using-SONICOM-Data",
-        description: "HRTF Simulation and Study is a project that aims to simulate and study the Head-Related Transfer Function (HRTF) using digital signal processing techniques. The project uses a combination of convolution and filtering to create a realistic HRTF simulation. The project was developed as part of the 'Spatial Audio' course at Politecnico di Milano."
+        description: "Numerical HRTF synthesis with boundary-element modeling — Politecnico di Milano\n\n" +
+            "Head-related transfer functions (HRTFs) describe how a listener's own head, ears, and body filter incoming sound depending on its direction. They are the acoustic cues the brain uses to place sounds in space and the foundation of convincing binaural and spatial audio for VR, AR, and headphone listening. Because HRTFs are highly individual, measuring them requires specialized equipment and controlled acoustic conditions — which makes simulating them numerically from a 3D scan of the subject an appealing, more scalable alternative.\n\n" +
+            "This project investigated how faithfully a subject-specific simulation pipeline can reproduce a person's measured HRTF, and specifically whether adding the torso and shoulders to the simulated geometry improves the match. Using the SONICOM dataset — which provides, for each subject, measured HRTFs, 3D scans, and official reference simulations — I built and compared four HRTF sets: the acoustic measurement, SONICOM's official simulation, and two of my own boundary-element (BEM) simulations computed with Mesh2HRTF, one head-only and one head-and-torso. The head-and-torso geometry was reconstructed by hand from a raw body scan: removing clothing, repairing holes and non-manifold regions, and grading the mesh around each ear to obtain a watertight, simulation-ready surface.\n\n" +
+            "Agreement with the measurement was quantified using spectral error, log-spectral distortion (LSD), and the binaural cues ITD and ILD, analyzed not only as global averages but across frequency bands and spatial regions. The key finding is that the torso's contribution is selective rather than uniformly beneficial: it improves spectral agreement below 6 kHz and, most clearly, in low-elevation lateral directions — where shoulder and torso diffraction, reflection, and shadowing matter most — while not improving the global average, partly because meshing and computational limits cap the reliably simulated bandwidth at around 10 kHz."+
+            "The project was developed as part of the 'Music and Acoustic Engineering Capstone' course at Politecnico di Milano."
     },
     {
         id: "Music Instrument Classification",
@@ -112,7 +122,13 @@ const projects = [
         category: "Machine Learning",
         year: "2026",
         hue: 220,
-        description: "Music Instrument Classification is a project that aims to classify musical instruments using machine learning techniques. The project uses a combination of feature extraction and classification algorithms to create a model that can accurately classify musical instruments. The project was developed as part of the 'Machine Learning for Audio' course at Politecnico di Milano."
+        image: "images/AST.png",
+        report: "report/Music_Instrument_Classification_report.pdf",
+        tech: ["Python","Transfer Learning","PyTorch","Audio Feature Engineering"],
+        description: "Automatic music instrument recognition — identifying which instruments are playing in an audio signal — is a core problem in Music Information Retrieval and a building block for tasks like source separation, score alignment, and recommendation. It is also deceptively hard: in real recordings, instruments overlap in both time and frequency, so cues that are clean in isolation become entangled in a full mix. This project studied the problem in two complementary settings: recognising a single instrument from an isolated stem (Scenario A, single-label) and recognising all instruments present in a polyphonic mixture (Scenario B, multi-label).\n\n" +
+            "Rather than training a network from scratch, the work takes a state-of-the-art pretrained model — the Audio Spectrogram Transformer (AST), a convolution-free, attention-based classifier pretrained on AudioSet — and asks a focused question: how do specific design choices affect its performance when transferred to a small, curated music dataset? To answer it, I ran a structured ablation study over three axes, each isolated with single-variable experiments on balanced subsets of MedleyDB: the fine-tuning strategy (zero-shot, a lightweight Linear Probe, and BitFit + LayerNorm tuning), the input feature representation (log-Mel spectrogram vs. CQT and MFCCs), and data augmentation (SpecAugment, Mixup, and their combination). The pipeline was designed for reproducibility and for a resource-constrained setting (free-tier Colab GPUs), with careful track-level data splitting to prevent leakage and macro-F1 as the primary metric.\n\n" +
+            "The clearest result is that minimal adaptation goes a long way: a Linear Probe with only ~7,700 trainable parameters lifts stem-level macro-F1 from 0.58 (zero-shot) to 0.83, showing that AudioSet's learned representations already encode most of the timbral information needed. Keeping the input domain-matched to pretraining mattered too — replacing Mel spectrograms with CQT or MFCCs consistently hurt performance — while augmentation helped selectively (Mixup best for isolated stems, SpecAugment most useful under instrument overlap). Notably, the gap between the best single-label and multi-label configurations was small (0.85 vs. 0.83), suggesting a single-label pretrained Transformer can be repurposed for harder polyphonic, multi-label recognition when paired with an appropriate evaluation and aggregation strategy."+
+            "The project was developed as part of the 'Selected Topics in Music and Acoustic Engineering' course at Politecnico di Milano."
     }
 ];
 
