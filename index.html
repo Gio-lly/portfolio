@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giorgio Mattina — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- VISTA: Home -->
+    <main id="view-home" class="view">
+        <header class="hero">
+            <div class="hero-main">
+                <h1>GIORGIO MATTINA</h1>
+                <p class="hero-text">
+                   I am currently a student in Music and Acoustic Engineering at Politecnico di Milano. I am passionate about music, photography, and programming. 
+                   This is my personal portfolio where I showcase my university projects and creative works.
+                <div class="hero-links">
+                    <a href="mailto:giorgio.mattina@mail.polimi.it">Email</a>
+                    <a href="https://github.com/Gio-lly">GitHub</a>
+                    <a href="https://www.linkedin.com/in/giorgio-mattina-6077a2339/">LinkedIn</a>
+                </div>
+            </div>
+
+            <nav class="hero-nav">
+                <ul>
+                    <li><a href="#/projects">Projects</a></li>
+                    <li><a href="#/photography">Photography</a></li>
+                    <li><a href="#/music">Music</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <footer class="site-footer">
+            <p>&copy; 2026 Giorgio Mattina</p>
+        </footer>
+    </main>
+
+    <!-- VISTA: Lista progetti -->
+    <main id="view-projects" class="view is-hidden">
+        <div class="page-inner">
+            <button class="back-btn" data-back="">&larr; Home</button>
+            <h2 class="section-title">Projects</h2>
+            <div id="projects-grid" class="projects-grid"></div>
+        </div>
+    </main>
+
+    <!-- VISTA: Dettaglio progetto -->
+    <main id="view-project" class="view is-hidden">
+        <div class="page-inner">
+            <button class="back-btn" data-back="#/projects">&larr; Back to projects</button>
+            <article id="project-detail" class="project-detail"></article>
+        </div>
+    </main>
+
+    <!-- VISTA: Photography -->
+    <main id="view-photography" class="view is-hidden">
+        <div class="page-inner">
+            <button class="back-btn" data-back="">&larr; Home</button>
+            <h2 class="section-title">Photography</h2>
+            <p class="placeholder-text">Coming soon.</p>
+        </div>
+    </main>
+
+    <!-- VISTA: Music -->
+    <main id="view-music" class="view is-hidden">
+        <div class="page-inner">
+            <button class="back-btn" data-back="">&larr; Home</button>
+            <h2 class="section-title">Music</h2>
+            <p class="placeholder-text">Coming soon.</p>
+        </div>
+    </main>
+
+    <script src="scripts.js" defer></script>
+</body>
+</html>
