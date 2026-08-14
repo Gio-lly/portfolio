@@ -46,7 +46,7 @@ const projects = [
         category: "Sound synthesis and processing",
         year: "2025",
         hue: 60,
-        image: "images/wdf.png",
+        image: "images/WDF.png",
         tech: ["MATLAB"],
         report: "report/SSSP_report.pdf",
         description: "This project focuses on the development of a Wave Digital Filter (WDF) model for a piezoelectric MEMS loudspeaker, based on the linear lumped-element reference circuit provided"+
