@@ -34,8 +34,52 @@ const projects = [
         category: "Sound synthesis and processing",
         year: "2025",
         hue: 40,
-        description: "Descrizione del terzo progetto: una breve panoramica su idea, processo " +
-            "creativo e strumenti usati."
+        description: ""+
+        ""+
+        ""
+    },
+    {
+        id: "Wave Digital Synthesis",
+        title: "Wave Digital Synthesis",
+        category: "Sound synthesis and processing",
+        year: "2025",
+        hue: 60,
+        description: ""+
+        ""+
+        ""
+    },
+    {
+        id:"Cathartic",
+        title:"Cathartic",
+        category: "Interactive Sound Installation",
+        year: "2026",
+        hue: 180,
+        description: "Cathartic is an interactive sound installation that allows the user to interact with a virtual environment through the use of a Leap Motion controller. The user can manipulate the sound and the visual elements of the installation by moving their hands in front of the controller. The installation is designed to create an immersive experience for the user, allowing them to explore the relationship between sound and movement. The project was developed as part of the 'Interactive Sound Installations' course at Politecnico di Milano."
+    },
+    {
+        id:"Banjo Modelling",
+        title:"Banjo Modelling",
+        category: "Physical Modelling",
+        year: "2026",
+        hue: 100,
+        description: "Banjo Modelling is a physical modelling project that aims to simulate the sound of a banjo using digital signal processing techniques. The project uses a combination of waveguide synthesis and modal synthesis to create a realistic banjo sound. The project was developed as part of the 'Physical Modelling' course at Politecnico di Milano."
+
+    },
+    {
+        id:"HRTF Simulation and Study",
+        title:"HRTF Simulation and Study",
+        category: "Spatial Audio",
+        year: "2026",
+        hue: 280,
+        description: "HRTF Simulation and Study is a project that aims to simulate and study the Head-Related Transfer Function (HRTF) using digital signal processing techniques. The project uses a combination of convolution and filtering to create a realistic HRTF simulation. The project was developed as part of the 'Spatial Audio' course at Politecnico di Milano."
+    },
+    {
+        id : "Music Instrument Classification",
+        title : "Music Instrument Classification",
+        category : "Machine Learning",
+        year : "2026",
+        hue : 220,
+        description : "Music Instrument Classification is a project that aims to classify musical instruments using machine learning techniques. The project uses a combination of feature extraction and classification algorithms to create a model that can accurately classify musical instruments. The project was developed as part of the 'Machine Learning for Audio' course at Politecnico di Milano."
     }
 ];
 
@@ -85,7 +129,7 @@ function renderProjects() {
             </div>
         `;
 
-        const open = () => { window.location.hash = `/projects/${project.id}`; };
+        const open = () => { window.location.hash = `/projects/${encodeURIComponent(project.id)}`; };
         card.addEventListener("click", open);
         card.addEventListener("keydown", (e) => {
             if (e.key === "Enter" || e.key === " ") {
@@ -134,7 +178,8 @@ function router() {
 
     const projectMatch = hash.match(/^projects\/(.+)$/);
     if (projectMatch) {
-        const project = projects.find((p) => p.id === projectMatch[1]);
+        const id = decodeURIComponent(projectMatch[1]);
+        const project = projects.find((p) => p.id === id);
         if (project) {
             showProject(project);
             showView("project");
