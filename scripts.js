@@ -25,7 +25,7 @@ const projects = [
         tech: ["Leap Motion", "SuperCollider", "C++", "Processing","JUCE"],
         description: "Hand2Hand is a computer music system that allows the performer to use his/her hands to control the sound synthesis."+
         "The system is based on a Leap Motion controller tbat tracks the performer's hands and fingers, and a Supercollider that generates the sound. The system is designed to incorporate a vst plugin that exposes the sound synthesis parameters to the performer, allowing for a more expressive performance. "+
-        ""+
+        "We also coded our own vst multi-effect plugin, fully controllable through the Leap Motion controller."+
         "The project was developed as part of the 'Computer Music Languages and Systems' course at Politecnico di Milano."
     },
     {
@@ -34,9 +34,11 @@ const projects = [
         category: "Sound synthesis and processing",
         year: "2025",
         hue: 40,
-        description: ""+
-        ""+
-        ""
+        github: "https://github.com/Gio-lly/sasp-first-homework",
+        tech: ["MATLAB"],
+        report: "report/DAAP_report.pdf",
+        description: "This project implements a Linear Predictive Coding (LPC-10) analysis/synthesis system in MATLAB, reproducing the speech-coding approach used in the 1978 Texas Instruments Speak & Spell toy (sold in Italy as Grillo parlante), whose TMC0280 chip synthesized speech from a compact set of LPC parameters."+
+        "The project was developed as part of the 'Sound Analysis, Synthesis and Processing' course at Politecnico di Milano."
     },
     {
         id: "Wave Digital Synthesis",
@@ -44,42 +46,73 @@ const projects = [
         category: "Sound synthesis and processing",
         year: "2025",
         hue: 60,
-        description: ""+
-        ""+
-        ""
+        image: "images/wdf.png",
+        tech: ["MATLAB"],
+        report: "report/SSSP_report.pdf",
+        description: "This project focuses on the development of a Wave Digital Filter (WDF) model for a piezoelectric MEMS loudspeaker, based on the linear lumped-element reference circuit provided"+
+        " in the assignment. The original analog model is converted into its WDF equivalent using"+
+        "a fully explicit computational approach, deliberately excluding iterative solution methods. The performance of the implemented WDF model is then evaluated by comparing"+
+        "its output to the reference signal obtained from a Simscape simulation, considering both"+
+        "time-domain and frequency-domain analyses."
     },
     {
-        id:"Cathartic",
-        title:"Cathartic",
+        id: "Cathartic",
+        title: "Cathartic",
         category: "Interactive Sound Installation",
         year: "2026",
         hue: 180,
-        description: "Cathartic is an interactive sound installation that allows the user to interact with a virtual environment through the use of a Leap Motion controller. The user can manipulate the sound and the visual elements of the installation by moving their hands in front of the controller. The installation is designed to create an immersive experience for the user, allowing them to explore the relationship between sound and movement. The project was developed as part of the 'Interactive Sound Installations' course at Politecnico di Milano."
+        image: "images/Cathartic.png",
+        report: "report/Cathartic.pdf",
+        github: "https://github.com/Gio-lly/Cathartic---CPAC-Final-Project",
+        description: "Cathartic is an interactive audiovisual installation exploring how artificial intelligence can "+
+        "support a personal and non-judgmental moment of emotional reflection. "+
+        "The project invites visitors to express something they are carrying inside: a feeling, a "+
+        "thought, a concern, or a secret. Rather than answering through language or attempting to "+
+        "interpret the visitor’s experience, the system transforms the submitted text into an evolving "+
+        "audiovisual environment."+
+        "Cathartic is envisioned as an intimate, capsule-like installation in which the visitor can "+
+        "temporarily step away from the surrounding environment and focus on the generated "+
+        "experience. The experience begins with a short disclaimer explaining the temporary and "+
+        "private nature of the interaction. The visitor is then invited to type a message. Once "+
+        "submitted, the text is processed in real time by an emotion-detection model that produces a "+
+        "continuous, multi-emotion representation rather than assigning the message to a single "+
+        "emotional category. "+
+        "The detected emotions influence a real-time generative music model by controlling a "+
+        "combination of weighted textual and audio prompts. At the same time, they define the "+
+        "general colour palette and visual character of a responsive particle system inspired by "+
+        "Chladni resonance patterns."
     },
     {
-        id:"Banjo Modelling",
-        title:"Banjo Modelling",
+        id: "Banjo Modelling",
+        title: "Banjo Modelling",
         category: "Physical Modelling",
         year: "2026",
         hue: 100,
-        description: "Banjo Modelling is a physical modelling project that aims to simulate the sound of a banjo using digital signal processing techniques. The project uses a combination of waveguide synthesis and modal synthesis to create a realistic banjo sound. The project was developed as part of the 'Physical Modelling' course at Politecnico di Milano."
-
+        image: "images/banjo.png",
+        report: "report/Banjo_Modeling_Serra_Impembo_Mattina.pdf",
+        description: "The project is a musical-acoustics modeling study whose goal is to characterize the vibro-acoustic behavior of a banjo-like instrument and, ultimately, to synthesize its sound. The instrument is idealized as three coupled elements — a circular aluminum soundboard (a thin, clamped plate), an iron string stretched over it, and a resonating soundbox — and the work traces the full chain from the physical/mechanical characterization of these parts to the audio signal that the assembled instrument would radiate when the string is plucked. In short, it aims to show how the modal and resonant properties of the body shape the timbre of a struck string.\n\n" +
+            "The study combines analytical modeling with finite-element simulation. On the analytical side, it characterizes the plate by computing the propagation speeds of quasi-longitudinal and longitudinal waves, the frequency-dependent (dispersive) speed of bending waves, and the modal frequencies of its first six bending modes. These analytical results are then cross-checked against a COMSOL eigenfrequency study, which returns both the frequencies and the mode shapes; a further COMSOL simulation applies a string-like point force to the plate to extract the driving-point mobility (admittance) Yc at the excitation point.\n\n" +
+            "The second half of the project introduces the string and the coupling between string and soundboard. The string is tuned so that its fundamental coincides with the plate's first mode, which fixes the required tension, and the frequencies of the coupled string–soundboard system are then computed while accounting for the plate's modal damping through assigned merit (quality) factors Q. The soundboard admittance is modeled as a sum of modal contributions, and the calculation is repeated for two different sets of Q values (a more damped case Yl and a more resonant case Yh) to compare how damping affects the response. The plate is then mounted on a soundbox, whose Helmholtz resonance is computed and added to the admittances (yielding Yl′ and Yh′), so that the air cavity's contribution is included.\n\n" +
+            "Finally, the project uses these admittances as filters: the vibrational signal of a string plucked at one-fifth of its length is passed through Yl′, Yh′, and Yc, with a prescribed decay time of 1.3 s, to synthesize the radiated sound. The deliverables are a concise report describing the procedure, the COMSOL model, and the sound-synthesis code together with the resulting audio."
     },
     {
-        id:"HRTF Simulation and Study",
-        title:"HRTF Simulation and Study",
+        id: "HRTF Simulation and Study",
+        title: "HRTF Simulation and Study",
         category: "Spatial Audio",
         year: "2026",
         hue: 280,
+        image: "images/hrtf.png",
+        report: "report/HRTF_report.pdf",
+        github: "https://github.com/Gio-lly/A-Comparative-Study-of-HRTF-Measurements-and-Simulations-Using-SONICOM-Data",
         description: "HRTF Simulation and Study is a project that aims to simulate and study the Head-Related Transfer Function (HRTF) using digital signal processing techniques. The project uses a combination of convolution and filtering to create a realistic HRTF simulation. The project was developed as part of the 'Spatial Audio' course at Politecnico di Milano."
     },
     {
-        id : "Music Instrument Classification",
-        title : "Music Instrument Classification",
-        category : "Machine Learning",
-        year : "2026",
-        hue : 220,
-        description : "Music Instrument Classification is a project that aims to classify musical instruments using machine learning techniques. The project uses a combination of feature extraction and classification algorithms to create a model that can accurately classify musical instruments. The project was developed as part of the 'Machine Learning for Audio' course at Politecnico di Milano."
+        id: "Music Instrument Classification",
+        title: "Music Instrument Classification",
+        category: "Machine Learning",
+        year: "2026",
+        hue: 220,
+        description: "Music Instrument Classification is a project that aims to classify musical instruments using machine learning techniques. The project uses a combination of feature extraction and classification algorithms to create a model that can accurately classify musical instruments. The project was developed as part of the 'Machine Learning for Audio' course at Politecnico di Milano."
     }
 ];
 
@@ -100,8 +133,9 @@ function placeholderImage(title, hue) {
         <svg xmlns="http://www.w3.org/2000/svg" width="900" height="600">
             <rect width="900" height="600" fill="hsl(${hue}, 30%, 14%)" />
             <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle"
-                  font-family="Georgia, serif" font-size="42" fill="hsl(${hue}, 40%, 70%)">
-                ${title}
+                  font-family="Consolas, Courier New, monospace" font-weight="700"
+                  letter-spacing="6" font-size="38" fill="hsl(${hue}, 40%, 70%)">
+                ${title.toUpperCase()}
             </text>
         </svg>`;
     return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
@@ -147,17 +181,29 @@ function showProject(project) {
         ? `<a class="github-btn" href="${project.github}" target="_blank" rel="noopener noreferrer">View on GitHub</a>`
         : "";
 
+    const reportButton = project.report
+        ? `<a class="report-btn" href="${project.report}" download target="_blank" rel="noopener noreferrer">Download Report (PDF)</a>`
+        : "";
+
     const techList = project.tech && project.tech.length
         ? `<ul class="tech-list">${project.tech.map((t) => `<li>${t}</li>`).join("")}</ul>`
         : "";
+
+    const descriptionParagraphs = project.description
+        .split("\n\n")
+        .map((paragraph) => `<p class="project-detail-description">${paragraph}</p>`)
+        .join("");
 
     projectDetail.innerHTML = `
         <img class="project-detail-image" src="${getProjectImage(project)}" alt="${project.title}">
         <p class="project-meta">${project.category} · ${project.year}</p>
         <h1>${project.title}</h1>
-        <p class="project-detail-description">${project.description}</p>
+        ${descriptionParagraphs}
         ${techList}
-        ${githubButton}
+        <div class="project-actions">
+            ${githubButton}
+            ${reportButton}
+        </div>
     `;
 }
 
