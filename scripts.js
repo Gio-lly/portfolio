@@ -24,7 +24,7 @@ const projects = [
         github: "https://github.com/Gio-lly/Hand2Hand-computer-music-system",
         tech: ["Leap Motion", "SuperCollider", "C++", "Processing","JUCE"],
         description: "Hand2Hand is a computer music system that allows the performer to use his/her hands to control the sound synthesis."+
-        "The system is based on a Leap Motion controller tbat tracks the performer's hands and fingers, and a Supercollider that generates the sound. The system is designed to incorporate a vst plugin that exposes the sound synthesis parameters to the performer, allowing for a more expressive performance. "+
+        "The system is based on a Leap Motion controller that tracks the performer's hands and fingers, and a Supercollider instance that generates the sound. The system is designed to incorporate a vst plugin that exposes the sound processing parameters to the performer, allowing for a more expressive performance. "+
         "We also coded our own vst multi-effect plugin, fully controllable through the Leap Motion controller."+
         "The project was developed as part of the 'Computer Music Languages and Systems' course at Politecnico di Milano."
     },
